@@ -1,24 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bqV-iV-Dyt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RomanNumbers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hesaplanan değer:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQH-ku-zgg">
+                                <rect key="frame" x="43" y="236" width="329" height="132"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter Romen number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exx-cl-WvC">
+                                <rect key="frame" x="80" y="147" width="255" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="aVh-Em-cHA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBI-pw-DpA">
+                                <rect key="frame" x="132" y="449" width="151" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="AoW-nc-FhB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Convert"/>
+                                <connections>
+                                    <action selector="convertBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2sf-1Z-HcD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CJ-Jk-Gj9">
+                                <rect key="frame" x="144" y="469" width="126" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="71b-8C-OV6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add to favorites"/>
+                                <connections>
+                                    <action selector="addToFavoritesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1XL-FA-9ad"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="exx-cl-WvC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3DF-Ha-d16"/>
+                            <constraint firstItem="aQH-ku-zgg" firstAttribute="top" secondItem="exx-cl-WvC" secondAttribute="bottom" constant="55" id="78j-gl-OQ7"/>
+                            <constraint firstItem="zBI-pw-DpA" firstAttribute="centerX" secondItem="1CJ-Jk-Gj9" secondAttribute="centerX" id="7tC-cP-rxo"/>
+                            <constraint firstItem="aQH-ku-zgg" firstAttribute="centerX" secondItem="zBI-pw-DpA" secondAttribute="centerX" id="8BB-xP-E3F"/>
+                            <constraint firstItem="zBI-pw-DpA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="9Rd-JP-uTg"/>
+                            <constraint firstItem="exx-cl-WvC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="GpJ-Gb-IKh"/>
+                            <constraint firstItem="zBI-pw-DpA" firstAttribute="top" secondItem="aQH-ku-zgg" secondAttribute="bottom" constant="81" id="JVG-8r-rbZ"/>
+                            <constraint firstItem="aQH-ku-zgg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="dff-kd-YBf"/>
+                            <constraint firstItem="exx-cl-WvC" firstAttribute="centerX" secondItem="aQH-ku-zgg" secondAttribute="centerX" id="gwL-k1-fFm"/>
+                            <constraint firstItem="1CJ-Jk-Gj9" firstAttribute="top" secondItem="zBI-pw-DpA" secondAttribute="bottom" constant="38" id="ldx-mF-R3K"/>
+                            <constraint firstItem="exx-cl-WvC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="lhd-DY-upH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1CJ-Jk-Gj9" secondAttribute="bottom" constant="313" id="xI2-CP-zfO"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sVs-P2-DRL">
+                        <barButtonItem key="rightBarButtonItem" title="Go to Favorites" id="pBv-zs-2WT">
+                            <connections>
+                                <action selector="goToFavoritesClicked:" destination="BYZ-38-t0r" id="Jlo-g8-3NE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addToFavitesOutlet" destination="1CJ-Jk-Gj9" id="SfA-oh-CSC"/>
+                        <outlet property="convertButton" destination="zBI-pw-DpA" id="IuY-VD-b9w"/>
+                        <outlet property="intLabel" destination="aQH-ku-zgg" id="QuS-5E-jsb"/>
+                        <outlet property="romanTextField" destination="exx-cl-WvC" id="Yi6-XT-gVq"/>
+                        <segue destination="4Gy-Ee-s6I" kind="show" identifier="goFavorites" id="YQJ-Ym-pWg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="62.946428571428569"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="W0b-wB-l4H">
+            <objects>
+                <viewController id="4Gy-Ee-s6I" customClass="FavoritesViewController" customModule="RomanNumbers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="138-NA-8js">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JYy-sh-sKC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1kW-50-lQJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1kW-50-lQJ" firstAttribute="trailing" secondItem="JYy-sh-sKC" secondAttribute="trailing" id="50E-MY-k89"/>
+                            <constraint firstItem="JYy-sh-sKC" firstAttribute="top" secondItem="1kW-50-lQJ" secondAttribute="top" id="Rgj-eW-xp0"/>
+                            <constraint firstItem="JYy-sh-sKC" firstAttribute="leading" secondItem="1kW-50-lQJ" secondAttribute="leading" id="SQ5-A3-eh0"/>
+                            <constraint firstItem="1kW-50-lQJ" firstAttribute="bottom" secondItem="JYy-sh-sKC" secondAttribute="bottom" id="mEG-xt-spf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OSP-JK-FSl"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="JYy-sh-sKC" id="sw7-Tg-WHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbL-Vk-WmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701" y="63"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1DB-iy-ugb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bqV-iV-Dyt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xR-cm-ldI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0zA-29-sih"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGo-uq-evh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="62.946428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
